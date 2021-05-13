@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/bacground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    app:layoutDescription="@xml/activity_main_scene">
+
+    <TextView
+        android:id="@+id/tvInput"
+        android:layout_width="370dp"
+        android:layout_height="308dp"
+        android:gravity="bottom|start"
+        android:lines="5"
+        android:padding="8dp"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="374dp"
+        android:layout_height="75dp"
+        android:gravity="start"
+        android:padding="8dp"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/orange_100"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvInput"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="@+id/tvInput"
+        app:layout_constraintTop_toBottomOf="@+id/tvInput"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:alpha="0.3"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvOutput"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/tvOutput"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutput"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/tvOutput">
+
+        <Button
+            android:id="@+id/pow_operator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="x^y"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toStartOf="@+id/swich"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOutput" />
+
+        <Button
+            android:id="@+id/swich"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="2nd"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_100"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/pow_operator"
+            app:layout_constraintTop_toTopOf="@+id/sin_operator" />
+
+        <Button
+            android:id="@+id/sin_operator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="sin"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/lg_operator"
+            app:layout_constraintTop_toBottomOf="@+id/tvOutput" />
+
+        <Button
+            android:id="@+id/cos_operator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="cos"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@+id/ln_operator"
+            app:layout_constraintTop_toBottomOf="@+id/tvOutput" />
+
+        <Button
+            android:id="@+id/tan_operator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="tan"
+            android:textAllCaps="false"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/open_parenthesses"
+            app:layout_constraintTop_toBottomOf="@+id/tvOutput" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/linear1"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/linear1"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
+
+        <Button
+            android:id="@+id/x_power_two"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="x²"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_100"
+            app:layout_constraintEnd_toEndOf="@+id/pow_operator"
+            app:layout_constraintStart_toStartOf="@+id/pow_operator"
+            app:layout_constraintTop_toBottomOf="@+id/pow_operator" />
+        <Button
+            android:id="@+id/lg_operator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="lg"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/swich"
+            app:layout_constraintStart_toStartOf="@+id/swich"
+            app:layout_constraintTop_toBottomOf="@+id/swich" />
+        <Button
+            android:id="@+id/ln_operator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="ln"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/sin_operator"
+            app:layout_constraintStart_toEndOf="@+id/swich"
+            app:layout_constraintStart_toStartOf="@+id/sin_operator"
+            app:layout_constraintTop_toBottomOf="@+id/sin_operator" />
+        <Button
+            android:id="@+id/open_parenthesses"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="("
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/cos_operator"
+            app:layout_constraintStart_toEndOf="@+id/ln_operator"
+            app:layout_constraintStart_toStartOf="@+id/cos_operator"
+            app:layout_constraintTop_toBottomOf="@+id/cos_operator" />
+        <Button
+            android:id="@+id/close_parenthesses"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text=")"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@+id/tan_operator"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toEndOf="@+id/open_parenthesses"
+            app:layout_constraintStart_toStartOf="@+id/tan_operator"
+            app:layout_constraintTop_toBottomOf="@+id/tan_operator" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linear2"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/linear2"
+        app:layout_constraintTop_toBottomOf="@+id/linear2">
+
+        <Button
+            android:id="@+id/root_operator"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text=" √x"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_100"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/x_power_two"
+            app:layout_constraintStart_toStartOf="@+id/x_power_two"
+            app:layout_constraintTop_toBottomOf="@+id/x_power_two" />
+
+        <Button
+            android:id="@+id/clear"
+            style="@style/button_attr.operation_attr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:text="@string/clear"
+            app:layout_constraintEnd_toEndOf="@+id/lg_operator"
+            app:layout_constraintEnd_toStartOf="@+id/ln_operator"
+            app:layout_constraintStart_toEndOf="@+id/x_power_two"
+            app:layout_constraintStart_toStartOf="@+id/lg_operator"
+            app:layout_constraintTop_toBottomOf="@+id/lg_operator" />
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:src="@drawable/ic_backspace"
+            android:tint="@color/orange_200"
+            app:layout_constraintEnd_toEndOf="@+id/ln_operator"
+            app:layout_constraintStart_toStartOf="@+id/ln_operator"
+            app:layout_constraintTop_toBottomOf="@+id/ln_operator" />
+
+        <Button
+            android:id="@+id/modulo_operator"
+            style="@style/button_attr.operation_attr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:text="@string/modulor"
+            app:layout_constraintEnd_toEndOf="@+id/open_parenthesses"
+            app:layout_constraintEnd_toStartOf="@+id/close_parenthesses"
+            app:layout_constraintStart_toEndOf="@+id/ln_operator"
+            app:layout_constraintStart_toStartOf="@+id/open_parenthesses"
+            app:layout_constraintTop_toBottomOf="@+id/open_parenthesses" />
+
+        <Button
+            android:id="@+id/divide_operator"
+            style="@style/button_attr.operation_attr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:text="@string/divide"
+            app:layout_constraintEnd_toEndOf="@+id/close_parenthesses"
+            app:layout_constraintStart_toStartOf="@+id/close_parenthesses"
+            app:layout_constraintTop_toBottomOf="@+id/close_parenthesses" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linear3"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/linear3"
+        app:layout_constraintTop_toBottomOf="@+id/linear3">
+
+        <Button
+            android:id="@+id/fact_operator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="x!"
+            android:textAllCaps="false"
+            android:visibility="visible"
+            android:textColor="@color/orange_100"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/root_operator"
+            app:layout_constraintStart_toStartOf="@+id/root_operator"
+            app:layout_constraintTop_toBottomOf="@+id/root_operator" />
+        <Button
+            android:id="@+id/seven_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_7"
+            app:layout_constraintBottom_toTopOf="@+id/four_num"
+            app:layout_constraintEnd_toEndOf="@+id/clear"
+            app:layout_constraintStart_toStartOf="@+id/clear"
+            app:layout_constraintTop_toBottomOf="@+id/clear" />
+
+        <Button
+            android:id="@+id/eight_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_8"
+            app:layout_constraintBottom_toTopOf="@+id/five_num"
+            app:layout_constraintEnd_toEndOf="@+id/back"
+            app:layout_constraintStart_toStartOf="@+id/back"
+            app:layout_constraintTop_toBottomOf="@+id/back"
+            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/nine_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_9"
+            app:layout_constraintBottom_toTopOf="@+id/six_num"
+            app:layout_constraintEnd_toEndOf="@+id/modulo_operator"
+            app:layout_constraintEnd_toStartOf="@+id/multiplication_operator"
+            app:layout_constraintStart_toStartOf="@+id/modulo_operator"
+            app:layout_constraintTop_toBottomOf="@+id/modulo_operator" />
+
+        <Button
+            android:id="@+id/multiplication_operator"
+            style="@style/button_attr.operation_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:background="@color/black"
+            android:text="@string/muliplication"
+            app:layout_constraintEnd_toEndOf="@+id/divide_operator"
+            app:layout_constraintStart_toStartOf="@+id/divide_operator"
+            app:layout_constraintTop_toBottomOf="@+id/divide_operator" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linear4"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/linear4"
+        app:layout_constraintTop_toBottomOf="@+id/linear4">
+        <Button
+            android:id="@+id/div_tow_operator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_marginTop="1dp"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="1/x"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_100"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/fact_operator"
+            app:layout_constraintStart_toStartOf="@+id/fact_operator"
+            app:layout_constraintTop_toBottomOf="@+id/fact_operator" />
+        <Button
+            android:id="@+id/four_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_4"
+            app:layout_constraintBottom_toTopOf="@+id/one_num"
+            app:layout_constraintEnd_toEndOf="@+id/seven_num"
+            app:layout_constraintStart_toStartOf="@+id/seven_num"
+            app:layout_constraintTop_toBottomOf="@+id/seven_num" />
+        <Button
+            android:id="@+id/five_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_5"
+            app:layout_constraintBottom_toTopOf="@+id/two_num"
+            app:layout_constraintEnd_toStartOf="@+id/nine_num"
+            app:layout_constraintStart_toEndOf="@+id/seven_num"
+            app:layout_constraintTop_toBottomOf="@+id/eight_num" />
+        <Button
+            android:id="@+id/six_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_6"
+            app:layout_constraintBottom_toTopOf="@+id/three_num"
+            app:layout_constraintEnd_toEndOf="@+id/nine_num"
+            app:layout_constraintStart_toStartOf="@+id/nine_num"
+            app:layout_constraintTop_toBottomOf="@+id/nine_num" />
+        <Button
+            android:id="@+id/minus_operator"
+            style="@style/button_attr.operation_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/minus"
+            app:layout_constraintEnd_toEndOf="@+id/multiplication_operator"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/nine_num"
+            app:layout_constraintTop_toBottomOf="@+id/multiplication_operator" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linear5"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/linear5"
+        app:layout_constraintTop_toBottomOf="@+id/linear5">
+
+        <Button
+            android:id="@+id/pi_operator"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:alpha="0.6"
+            android:background="@color/black"
+            android:text="π"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            android:textColor="@color/orange_100"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/div_tow_operator"
+            app:layout_constraintStart_toStartOf="@+id/div_tow_operator"
+            app:layout_constraintTop_toBottomOf="@+id/div_tow_operator" />
+        <Button
+            android:id="@+id/one_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_1"
+            app:layout_constraintEnd_toEndOf="@+id/four_num"
+            app:layout_constraintStart_toStartOf="@+id/four_num"
+            app:layout_constraintTop_toBottomOf="@+id/four_num" />
+        <Button
+            android:id="@+id/two_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_2"
+            app:layout_constraintEnd_toEndOf="@+id/five_num"
+            app:layout_constraintStart_toEndOf="@+id/four_num"
+            app:layout_constraintTop_toBottomOf="@+id/five_num" />
+        <Button
+            android:id="@+id/three_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/_3"
+            app:layout_constraintEnd_toEndOf="@+id/six_num"
+            app:layout_constraintStart_toStartOf="@+id/six_num"
+            app:layout_constraintTop_toBottomOf="@+id/six_num" />
+
+        <Button
+            android:id="@+id/plus_operator"
+            style="@style/button_attr.operation_attr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="@string/add"
+            app:layout_constraintEnd_toEndOf="@+id/minus_operator"
+            app:layout_constraintStart_toEndOf="@+id/six_num"
+            app:layout_constraintTop_toBottomOf="@+id/minus_operator" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/linear6"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="@+id/linear6"
+        app:layout_constraintTop_toBottomOf="@+id/linear6">
+
+        <ImageButton
+            android:id="@+id/rotate"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:src="@drawable/ic_rotate"
+            android:tint="@color/orange_200"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/pi_operator"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/pi_operator"
+            app:layout_constraintTop_toBottomOf="@+id/pi_operator"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/e_operator"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:text="e"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/one_num"
+            app:layout_constraintStart_toEndOf="@+id/pi_operator"
+            app:layout_constraintTop_toBottomOf="@+id/one_num"
+            app:layout_constraintVertical_bias="0.06999999" />
+
+        <Button
+            android:id="@+id/zero_num"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:text="@string/_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/two_num"
+            app:layout_constraintStart_toStartOf="@+id/two_num"
+            app:layout_constraintTop_toBottomOf="@+id/two_num"
+            app:layout_constraintVertical_bias="0.060000002" />
+
+        <Button
+            android:id="@+id/dot"
+            style="@style/button_attr.numbers_attr"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/black"
+            android:text="@string/dot"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/three_num"
+            app:layout_constraintStart_toStartOf="@+id/three_num"
+            app:layout_constraintTop_toBottomOf="@+id/three_num"
+            app:layout_constraintVertical_bias="0.060000002" />
+
+        <TextView
+            android:id="@+id/equal_operation"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/circle_shape"
+            android:elevation="16dp"
+            android:gravity="center"
+            android:text="="
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/plus_operator"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toStartOf="@+id/plus_operator"
+            app:layout_constraintTop_toBottomOf="@+id/plus_operator"
+            app:layout_constraintVertical_bias="0.07999998" />
+
+    </LinearLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
